@@ -21,7 +21,10 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <bean id="nameRepository" class="pokemon.repositories.PokemonRepository"/>
+    <bean id="pokemonRepository" class="pokemon.repositories.PokemonRepository">
+            <constructor-arg ref="dataSource" />
+    </bean>
+
     <bean id="trainerRepository" class="pokemon.repositories.TrainerRepository">
         <constructor-arg ref="dataSource" />
     </bean>
